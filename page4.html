@@ -1,0 +1,116 @@
+<html>
+<head>
+    <title>Chino Hills Pets Adoption Service</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<!-- Container is to wrap everything -->
+<div id="container">
+<!-- Website Brand -->
+    <header>Chino Hills Pets Adoption Service</header>
+<!-- Main Navigation -->    
+    <nav>
+        <ul>
+            <li style="font-size: 24px;"><a href="index.html">Home Page</a></li>
+            <li style="font-size: 24px;"><a href="page2.html">Available Pets</a></li>
+            <li style="font-size: 24px;"><a href="page4.html">Gallery</a></li>
+            <li style="font-size: 24px;"><a href="page3.html">Contact Us.</a></li>
+        </ul>
+    </nav>
+<!-- Main Content -->
+    <main>
+<br><h1>Ready to Adpot a pet?</h1>
+<p>Let's get started and you can find your pet here!</p>
+<div class="film-strip">
+    <img src="image/dog6.jpeg" alt="Pet Adoption">
+    <img src="image/dog7.jpeg" alt="Pet Adoption">
+    <img src="image/dog8.jpeg" alt="Pet Adoption">
+    <img src="image/dog9.jpeg" alt="Pet Adoption">
+    <img src="image/dog10.jpeg" alt="Pet Adoption">
+</div>
+    <h1>Gallery</h1>
+        <ul id="photoGallery">
+        
+        </ul>
+</main>
+<!-- Footer -->
+    
+<footer>
+    <br>Contact us:<br>
+    Email:info@chinohillspet<br>
+    Phone: (123)456-7890<br>
+    Address:111 Pet Street, Chino Hills,91809<br>
+    &copy; Copyright 2023
+</footer>
+</div>
+<script>
+    const photos = [
+        "image/lab1.jpeg",
+        "image/lab2.jpeg",
+        "image/lab3.jpeg",
+        "image/lab4.jpeg",
+        "image/lab5.jpeg",
+        "image/lab6.jpeg",
+        "image/lab7.jpeg",
+        "image/lab8.jpeg",
+        "image/lab9.jpeg",
+        "image/lab10.jpeg"
+    ];
+
+    const captionTexts = [
+        "Happy Pooch", 
+        "Playful Partner", 
+        "Lazy Day", 
+        "Adventurous Spirit", 
+        "Best Friend",
+        "Ready for Walks",
+        "Dreamy Day",
+        "Eager Explorer",
+        "Posing Perfectly",
+        "Ball Chaser"
+    ];
+
+    const descTexts = [
+        "This is Max, he loves to play.",
+        "Meet Bella, always up for a game of fetch.",
+        "Luna, enjoying her afternoon nap.",
+        "Charlie, always ready for an adventure.",
+        "Lucy, the most loyal companion.",
+        "Cooper, excited for his morning walk.",
+        "Chloe, lost in her little world.",
+        "Buddy, looking for his next adventure.",
+        "Sadie, posing for her close-up.",
+        "Rocky, dreaming about chasing balls."
+    ];
+
+    function displayPhotos() {
+        const gallery = document.getElementById("photoGallery");
+
+        for (let i = 0; i < photos.length; i++) {
+            const listItem = document.createElement('li');
+            listItem.id = `photo${i+1}`;
+
+            const image = document.createElement('img');
+            image.src = photos[i];
+            image.alt = "A pet available for adoption";
+
+            const caption = document.createElement('div');
+            caption.classList.add('caption');
+            caption.innerText = captionTexts[i];
+
+            const description = document.createElement('div');
+            description.classList.add('description');
+            description.innerText = descTexts[i];
+
+            listItem.appendChild(image);
+            listItem.appendChild(caption);
+            listItem.appendChild(description);
+
+            gallery.appendChild(listItem);
+        }
+    }
+
+    displayPhotos();
+</script>
+</body>
+</html>
